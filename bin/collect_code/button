@@ -1,0 +1,75 @@
+java Button
+
+
+	JButton btnJava = new JButton(); // 버튼영역_자바
+
+
+	int borderBuffer_LR = (int) ((g_W / 2) / 3);
+    int borderBuffer_LR2 = 80;
+    int greetingText_W = 625;
+    int greetingText_H = 150;
+    int btn_W = (g_W - (borderBuffer_LR + borderBuffer_LR2) * 2);
+    int btn_H = 125;
+    int greetingText_x = 512 - (greetingText_W / 2);
+    int greetingText_y = 96;
+    int btnJava_x = borderBuffer_LR + borderBuffer_LR2; //250나옴.
+    int btnJava_y = (greetingText_y + greetingText_H) + borderBuffer_T;
+
+
+
+    btnJava.setBounds(btnJava_x, btnJava_y, btn_W, btn_H);
+    btnJava.setOpaque(false); //투명하게
+    btnJava.setContentAreaFilled(false); //내용영역 채우기 없앰.
+    
+    btnJava.setBackground(Color.RED);
+    btnTextJava.setFont(new Font("Source Sans Pro", Font.BOLD, 60));
+    btnTextJava.setBounds((borderBuffer_LR + borderBuffer_LR2) + btn_H,
+               (greetingText_y + greetingText_H) + borderBuffer_T, btn_W - btn_H, btn_H);
+    btnTextJava.setOpaque(true);
+    btnTextJava.setBackground(Color.ORANGE);
+    btnTextJava.setHorizontalAlignment(JLabel.LEFT);
+           
+         
+    add(btnJava);
+         
+         
+         
+         //
+         
+         
+      class btnActionJava implements ActionListener {
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            switchToGameFrameJava();
+         } 
+
+         private void switchToGameFrameJava() {
+         GameFrame_Decoupling3 newFrame = new GameFrame_Decoupling3();
+         mainPanel.setVisible(false);
+         newFrame.setVisible(true);
+
+         dispose(); // 메인 페이지 종료 시키는 거
+            
+            
+         NewGamePanelJava2 newFrame = new NewGamePanelJava2();
+         newFrame.setVisible(true);
+         new GameFrameCommon();
+            
+         }
+
+         private void switchToGameFramePython() {
+         dispose(); // 윈도우1(메인페이지 프레임) 닫기 (종료)
+         new GameFrameCommon();
+
+         }
+    }   // 클래스 써서 상황 별로 클릭하는 부분 바꾼 듯.
+         
+        
+         
+         
+         // 여기서 또 추려야 함. 얘가 하는 기능만 쏙 골라서 ㅇㅇ
+         
+         
+         
+         
+         
